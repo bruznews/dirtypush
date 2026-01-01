@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DIRTYPUSH – Spin & Win</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -13,46 +13,48 @@
     <h1>DIRTYPUSH</h1>
   </header>
 
-  <!-- MAIN -->
+  <!-- LIVE TICKER -->
+  <div class="ticker">
+    <div class="ticker-move" id="tickerText">
+      Ramesh won TV • Suresh won iPhone • Amit got Mobile • Priya won VIP • …
+    </div>
+  </div>
+
+  <!-- MAIN WHEEL AREA -->
   <main class="main">
-
     <section class="wheel-area">
-      <!-- POINTER -->
-      <img src="assets/arrow.png" class="pointer" alt="Pointer">
 
-      <!-- RING + WHEEL -->
-      <div class="ring-wrap">
-        <img src="assets/ring.png" class="ring" alt="Ring">
-        <img src="assets/wheel.png" class="wheel" alt="Wheel">
+      <!-- POINTER -->
+      <div class="pointer"></div>
+
+      <!-- RING -->
+      <div class="ring"></div>
+
+      <!-- WHEEL -->
+      <div class="wheel" id="wheel">
+        <div class="segment" data-prize="TV">📺</div>
+        <div class="segment" data-prize="Fridge">🧊</div>
+        <div class="segment" data-prize="Mobile">📱</div>
+        <div class="segment" data-prize="iPhone">📲</div>
+        <div class="segment" data-prize="VIP">⭐</div>
+        <div class="segment" data-prize="Earbuds">🎧</div>
+        <div class="segment" data-prize="Earphone">🎵</div>
+        <div class="segment" data-prize="Better Luck">🍀</div>
       </div>
 
       <!-- SPIN BUTTON -->
-      <button class="spin-btn" id="spinBtn">SPIN</button>
+      <button class="spin-btn" id="spinBtn">SPIN (3)</button>
     </section>
-
   </main>
 
   <!-- RESULT POPUP -->
   <div class="popup hidden" id="resultPopup">
     <div class="popup-box">
-      <img id="popupImg" src="" alt="Prize">
       <h3 id="popupText"></h3>
-      <button id="popupAction" class="popup-btn">Claim Prize</button>
+      <button id="popupAction" class="popup-btn">Continue</button>
       <button onclick="closePopup()" class="close-btn">Close</button>
     </div>
   </div>
-
-  <!-- LIVE TICKER -->
-  <div class="ticker">
-    <div class="ticker-move" id="tickerText">
-      Ramesh won TV • Suresh won iPhone • Amit got VIP Access • ...
-    </div>
-  </div>
-
-  <!-- SCRIPTS -->
-  <script src="js/credit.js"></script>
-  <script src="js/wheel.js"></script>
-  <script src="js/ticker.js"></script>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -66,5 +68,8 @@
     <p>© 2026 DIRTYPUSH. All rights reserved.</p>
   </footer>
 
+  <script src="js/credit.js"></script>
+  <script src="js/wheel.js"></script>
+  <script src="js/ticker.js"></script>
 </body>
 </html>

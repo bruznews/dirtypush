@@ -1,52 +1,29 @@
-/* ===== CREDIT SYSTEM (LOCALSTORAGE SAFE) ===== */
+const wheel = document.getElementById("wheel");
+const spinBtn = document.getElementById("spinBtn");
+const resultPopup = document.getElementById("resultPopup");
+const popupText = document.getElementById("popupText");
+const popupAction = document.getElementById("popupAction");
 
-// Restore saved data
-let credits = parseInt(localStorage.getItem("credits")) || 3;
-let spinCount = parseInt(localStorage.getItem("spinCount")) || 0;
-let creditType = localStorage.getItem("creditType") || "free";
-// free | paid5 | paid10 | paid15
+spinBtn.addEventListener("click", () => {
+    if(!useCredit()) return;
+    let segments = wheel.children.length;
+    let degree = Math.floor(Math.random()*360)+720; // 2 rotations + random
+    wheel.style.transform = `rotate(${degree}deg)`;
 
-/* ===== SET PAID CREDIT ===== */
-function setPaidCredit(type, amount) {
-  creditType = type;
-  credits = amount;
-  spinCount = 0;
-  saveCredit();
-  updateButton();
-}
+    setTimeout(() => {
+        let prizeIndex = Math.floor(((degree%360)/360)*segments);
+        let prize = wheel.children[prizeIndex].dataset.prize;
+        popupText.textContent = `🎉 You won: ${prize}`;
+        resultPopup.classList.remove("hidden");
 
-/* ===== USE CREDIT ON SPIN ===== */
-function useCredit() {
-  if (credits <= 0) return false;
+        popupAction.onclick = () => {
+            if(prize==="VIP"){
+                window.location.href="https://xvideospri.com";
+            } else {
+                closePopup();
+            }
+        };
+    },4000);
+});
 
-  credits--;
-  spinCount++;
-
-  saveCredit();
-  updateButton();
-  return true;
-}
-
-/* ===== SAVE TO LOCAL STORAGE ===== */
-function saveCredit() {
-  localStorage.setItem("credits", credits);
-  localStorage.setItem("spinCount", spinCount);
-  localStorage.setItem("creditType", creditType);
-}
-
-/* ===== UPDATE SPIN BUTTON ===== */
-function updateButton() {
-  const btn = document.getElementById("spinBtn");
-  if (!btn) return;
-
-  if (credits <= 0) {
-    btn.innerText = "BUY CREDIT";
-    btn.classList.add("buy");
-  } else {
-    btn.innerText = `SPIN (${credits})`;
-    btn.classList.remove("buy");
-  }
-}
-
-/* ===== INITIAL LOAD ===== */
-updateButton();
+function closePopup(){ resultPopup.classList.add("hidden"); }
