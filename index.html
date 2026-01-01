@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>DIRTYPUSH – Spin & Win</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -18,12 +18,12 @@
 
     <section class="wheel-area">
       <!-- POINTER -->
-      <img src="assets/arrow.png" class="pointer" alt="Pointer" />
+      <img src="assets/arrow.png" class="pointer" alt="Pointer">
 
       <!-- RING + WHEEL -->
       <div class="ring-wrap">
-        <img src="assets/ring.png" class="ring" alt="Ring" />
-        <img src="assets/wheel.png" class="wheel" alt="Wheel" />
+        <img src="assets/ring.png" class="ring" alt="Ring">
+        <img src="assets/wheel.png" class="wheel" alt="Wheel">
       </div>
 
       <!-- SPIN BUTTON -->
@@ -31,31 +31,28 @@
     </section>
 
   </main>
-<!-- RESULT POPUP -->
-<div class="popup hidden" id="resultPopup">
-  <div class="popup-box">
-    <img id="popupImg" src="" alt="Prize">
-    <h3 id="popupText"></h3>
-    <button id="popupAction" class="popup-btn">Continue</button>
-    <button onclick="closePopup()" class="close-btn">Close</button>
-  </div>
-</div>
 
-<script src="js/credit.js"></script>
-<script src="js/wheel.js"></script>
-  <!-- LIVE TICKER -->
-  <div class="ticker">
-    <div class="ticker-move">
-      Ramesh won TV • Suresh won iPhone • Amit got VIP Access • Neha won Earbuds •
+  <!-- RESULT POPUP -->
+  <div class="popup hidden" id="resultPopup">
+    <div class="popup-box">
+      <img id="popupImg" src="" alt="Prize">
+      <h3 id="popupText"></h3>
+      <button id="popupAction" class="popup-btn">Claim Prize</button>
+      <button onclick="closePopup()" class="close-btn">Close</button>
     </div>
   </div>
 
-<!-- LIVE TICKER -->
-<div class="ticker">
-  <span id="tickerText"></span>
-</div>
+  <!-- LIVE TICKER -->
+  <div class="ticker">
+    <div class="ticker-move" id="tickerText">
+      Ramesh won TV • Suresh won iPhone • Amit got VIP Access • ...
+    </div>
+  </div>
 
-<script src="js/ticker.js"></script>
+  <!-- SCRIPTS -->
+  <script src="js/credit.js"></script>
+  <script src="js/wheel.js"></script>
+  <script src="js/ticker.js"></script>
 
   <!-- FOOTER -->
   <footer class="footer">
