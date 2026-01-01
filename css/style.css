@@ -103,7 +103,7 @@ header{
 
 /* ===== TICKER GAP ===== */
 .ticker{
-  margin: 8px 8px 12px;    /* bilkul compact */
+  margin: 6px 8px 4px;    /* bilkul compact */
   border-radius: 6px;
 }
 
