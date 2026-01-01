@@ -95,3 +95,33 @@ header{
   padding:20px;
   border-radius:10px;
 }
+
+/* ===== SPIN BUTTON GAP ===== */
+.spin-btn{
+  margin: 25px auto 30px; /* bottom gap bada */
+}
+
+/* ===== TICKER GAP ===== */
+.ticker{
+  margin: 20px 10px 35px; /* upar aur niche gap */
+  border-radius: 6px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top: 20px;
+  padding: 25px 10px 15px; /* footer ko niche push */
+  line-height: 1.8;
+}
+
+/* ===== FOOTER LINKS GAP ===== */
+footer a{
+  display:inline-block;
+  margin: 0 6px 10px; /* links ke beech aur niche gap */
+}
+
+/* ===== COPYRIGHT KO EKDAM NICHE ===== */
+footer br{
+  display:block;
+  margin-bottom:10px;
+}
