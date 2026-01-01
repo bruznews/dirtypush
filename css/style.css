@@ -103,7 +103,7 @@ header{
 
 /* ===== TICKER GAP ===== */
 .ticker{
-  margin: 20px 10px 35px; /* upar aur niche gap */
+  margin: 10px 8px 18px; /* upar aur niche gap */
   border-radius: 6px;
 }
 
@@ -117,7 +117,7 @@ footer{
 /* ===== FOOTER LINKS GAP ===== */
 footer a{
   display:inline-block;
-  margin: 0 6px 10px; /* links ke beech aur niche gap */
+  margin: 0 4px 10px; /* links ke beech aur niche gap */
 }
 
 /* ===== COPYRIGHT KO EKDAM NICHE ===== */
