@@ -1,67 +1,56 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIRTYPUSH – Spin & Win</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIRTYPUSH – Spin & Win</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Razorpay SDK -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <h1>DIRTYPUSH</h1>
-  </header>
+<header>DIRTYPUSH</header>
 
-  <!-- LIVE TICKER -->
-  <div class="ticker">
-    <div class="ticker-move" id="tickerText">
-      Ramesh won TV • Suresh won iPhone • Amit got Mobile • Priya won VIP • …
-    </div>
+<div class="ad">adstra ad space</div>
+
+<div class="wheel-box">
+  <img src="assets/arrow.png" class="arrow-img">
+
+  <div class="wheel" id="wheel">
+    <div class="center">SPIN</div>
   </div>
+</div>
 
-  <!-- WHEEL AREA -->
-  <main class="main">
-    <section class="wheel-area">
+<button class="spin-btn" id="spinBtn">SPIN (3)</button>
 
-      <!-- POINTER -->
-      <div class="pointer"></div>
+<div class="ticker" id="ticker"></div>
 
-      <!-- RING + WHEEL -->
-      <div class="wheel-container">
-        <div class="ring"></div>
-        <canvas id="wheelCanvas" width="300" height="300"></canvas>
-      </div>
+<footer>
+  <a href="pages/about.html">About</a> |
+  <a href="pages/contact.html">Contact</a> |
+  <a href="pages/privacy.html">Privacy</a> |
+  <a href="pages/rules.html">Rules</a> |
+  <a href="pages/disclaimer.html">Disclaimer</a>
+  <br>© 2026 DIRTYPUSH
+</footer>
 
-      <!-- SPIN BUTTON -->
-      <button class="spin-btn" id="spinBtn">SPIN (3)</button>
-
-    </section>
-  </main>
-
-  <!-- RESULT POPUP -->
-  <div class="popup hidden" id="resultPopup">
-    <div class="popup-box">
-      <h3 id="popupText"></h3>
-      <button id="popupAction" class="popup-btn">Continue</button>
-      <button onclick="closePopup()" class="close-btn">Close</button>
-    </div>
+<!-- POPUP -->
+<div class="popup hidden" id="popup">
+  <div class="popup-box">
+    <h3 id="popupText"></h3>
+    <button id="popupBtn">Continue</button>
   </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <nav class="links">
-      <a href="pages/about.html">About</a>
-      <a href="pages/contact.html">Contact</a>
-      <a href="pages/privacy.html">Privacy</a>
-      <a href="pages/rules.html">Game Rules</a>
-      <a href="pages/disclaimer.html">Disclaimer</a>
-    </nav>
-    <p>© 2026 DIRTYPUSH. All rights reserved.</p>
-  </footer>
+<!-- JS FILES -->
+<script src="js/credit.js"></script>
+<script src="js/razorpay.js"></script>
+<script src="js/wheel.js"></script>
+<script src="js/ticker.js"></script>
 
-  <script src="js/credit.js"></script>
-  <script src="js/wheel.js"></script>
-  <script src="js/ticker.js"></script>
 </body>
 </html>

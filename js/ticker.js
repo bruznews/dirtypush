@@ -1,4 +1,9 @@
-const tickerText = document.getElementById("tickerText");
-// Example dynamic names (can be replaced from Firebase/API later)
-let names = ["Ramesh won TV","Suresh won iPhone","Amit got Mobile","Priya won VIP","Anil got Earbuds"];
-tickerText.textContent = names.join(" • ");
+/* ===== LIVE TICKER ===== */
+const names=[
+ "Rahul won TV","Heena won iPhone","Aman VIP","Suresh Earbuds"
+];
+let i=0;
+setInterval(()=>{
+  document.getElementById("ticker").innerText="🏆 "+names[i];
+  i=(i+1)%names.length;
+},2500);

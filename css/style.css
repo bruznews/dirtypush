@@ -1,53 +1,97 @@
-* { margin:0; padding:0; box-sizing:border-box; font-family:sans-serif; }
-body { text-align:center; background:#f8f8f8; }
-
-/* HEADER */
-.header { padding:20px; background:#333; color:white; font-weight:bold; }
-
-/* LIVE TICKER */
-.ticker { width:100%; overflow:hidden; background:#222; color:white; font-size:14px; padding:5px 0; margin:10px 0; }
-.ticker-move { display:inline-block; white-space:nowrap; animation:ticker 15s linear infinite; }
-@keyframes ticker { 0% { transform:translateX(100%); } 100% { transform:translateX(-100%); } }
-
-/* WHEEL AREA */
-.main { padding:20px; display:flex; justify-content:center; }
-.wheel-area { position:relative; width:90vw; max-width:300px; }
-
-/* POINTER */
-.pointer {
-  position:absolute;
-  top:-25px; left:50%;
-  transform:translateX(-50%);
-  width:0; height:0;
-  border-left:20px solid transparent;
-  border-right:20px solid transparent;
-  border-bottom:30px solid red;
-  z-index:3;
+/* ================= BASE CSS ================= */
+body{
+  margin:0;
+  background:#111;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  text-align:center;
 }
 
-/* RING + WHEEL */
-.wheel-container { position:relative; width:100%; padding-top:100%; }
-.ring {
-  position:absolute; top:0; left:0;
-  width:100%; height:100%;
+/* ================= HEADER ================= */
+header{
+  padding:15px 0;
+  font-size:28px;
+  font-weight:bold;
+}
+
+/* ================= AD ================= */
+.ad{
+  background:#cfcfcf;
+  color:#000;
+  padding:10px;
+}
+
+/* ================= WHEEL ================= */
+.wheel-box{
+  position:relative;
+  width:320px;
+  height:320px;
+  margin:25px auto;
+}
+
+.wheel{
+  width:100%;
+  height:100%;
   border-radius:50%;
-  border:5px solid gold;
-  box-shadow:0 0 15px gold;
-  z-index:1;
+  background:url("../assets/wheel.png") center/cover;
+  transition:transform 4s cubic-bezier(0.25,0.1,0.25,1);
 }
 
-/* SPIN BUTTON */
-.spin-btn {
-  margin-top:20px;
-  padding:10px 20px; background:#28a745; color:white;
-  border:none; border-radius:5px; font-size:18px;
+.arrow-img{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:35px;
+  z-index:5;
 }
 
-/* POPUP */
-.popup { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; justify-content:center; align-items:center; }
-.popup-box { background:white; padding:20px; border-radius:10px; text-align:center; }
-.hidden { display:none; }
+.center{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  width:90px;
+  height:90px;
+  background:red;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
 
-/* FOOTER */
-.footer { margin-top:20px; padding:10px 0; background:#333; color:white; font-size:14px; }
-.footer .links a { color:white; margin:0 5px; text-decoration:none; font-size:14px; }
+/* ================= BUTTON ================= */
+.spin-btn{
+  background:#28a745;
+  color:#fff;
+  border:none;
+  padding:15px 60px;
+  border-radius:30px;
+  font-size:18px;
+}
+
+/* ================= TICKER ================= */
+.ticker{
+  background:#2ecc71;
+  padding:10px;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+/* ================= POPUP ================= */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hidden{display:none;}
+
+.popup-box{
+  background:#fff;
+  color:#000;
+  padding:20px;
+  border-radius:10px;
+}

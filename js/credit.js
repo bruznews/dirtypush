@@ -1,13 +1,14 @@
-let credits = parseInt(localStorage.getItem("credits")) || 3;
+/* ===== CREDIT SYSTEM ===== */
+let credits = 3;
 
-function useCredit(){
-    if(credits<=0){ alert("Buy more credits!"); return false; }
-    credits--;
-    localStorage.setItem("credits", credits);
-    updateButton();
-    return true;
+function updateBtn(){
+  const btn = document.getElementById("spinBtn");
+  if(credits<=0){
+    btn.innerText="BUY CREDIT";
+    btn.style.background="red";
+  }else{
+    btn.innerText=`SPIN (${credits})`;
+    btn.style.background="#28a745";
+  }
 }
-
-function updateButton(){ spinBtn.textContent = credits>0 ? `SPIN (${credits})` : "BUY CREDIT"; }
-
-updateButton();
+updateBtn();
