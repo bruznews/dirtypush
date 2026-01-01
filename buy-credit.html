@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy Credit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>dirtypush</h1>
+</header>
+
+<main class="buy-container">
+
+  <h2>💳 क्रेडिट खरीदें</h2>
+
+  <div class="plan" onclick="buyCredit(5)">
+    <h3>₹5</h3>
+    <p>5 Credit</p>
+  </div>
+
+  <div class="plan" onclick="buyCredit(10)">
+    <h3>₹10</h3>
+    <p>10 Credit</p>
+  </div>
+
+  <div class="plan highlight" onclick="buyCredit(15)">
+    <h3>₹15</h3>
+    <p>20 Credit</p>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>100% Secure Payment</p>
+</footer>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="js/razorpay.js"></script>
+</body>
+</html>

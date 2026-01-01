@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Claim Prize</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <h1>DIRTYPUSH</h1>
+</header>
+
+<div class="container">
+  <h3 id="prizeTitle"></h3>
+
+  <form id="claimForm">
+    <input type="text" id="name" placeholder="पूरा नाम" required />
+    <input type="text" id="address" placeholder="पूरा पता" required />
+    <input type="tel" id="mobile" placeholder="मोबाइल नंबर" required />
+    <input type="email" id="email" placeholder="ईमेल" required />
+
+    <button type="submit" class="green-btn">
+      ₹5 Pay & Submit
+    </button>
+  </form>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="js/razorpay.js"></script>
+</body>
+</html>
