@@ -4,32 +4,66 @@
   <meta charset="UTF-8">
   <title>Claim Prize</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="claim-page">
 
-<header>
-  <h1>DIRTYPUSH</h1>
-</header>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>DIRTYPUSH</h1>
+  </header>
 
-<div class="container">
-  <h3 id="prizeTitle">🎁 आपने इनाम जीता है</h3>
+  <!-- ===== CLAIM FORM CARD ===== -->
+  <div class="container">
+    <h3 id="prizeTitle">🎁 इनाम प्राप्त करने के लिए नीचे फॉर्म भरें</h3>
 
-  <form id="claimForm">
-    <input type="text" id="name" placeholder="पूरा नाम" required>
-    <input type="text" id="address" placeholder="पूरा पता" required>
-    <input type="tel" id="mobile" placeholder="मोबाइल नंबर" required>
-    <input type="email" id="email" placeholder="ईमेल आईडी" required>
+    <form id="claimForm">
+      <input
+        type="text"
+        id="name"
+        placeholder="पूरा नाम"
+        required
+      >
 
-    <button type="submit" class="green-btn">
-      ₹5 Pay & Submit
-    </button>
-  </form>
-</div>
+      <input
+        type="text"
+        id="address"
+        placeholder="पूरा पता"
+        required
+      >
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script src="js/razorpay.js"></script>
+      <input
+        type="tel"
+        id="mobile"
+        placeholder="मोबाइल नंबर"
+        required
+      >
+
+      <input
+        type="email"
+        id="email"
+        placeholder="ईमेल ID"
+        required
+      >
+
+      <button type="submit" class="green-btn">
+        GST + TAX ₹5 Pay & Submit
+      </button>
+    </form>
+  </div>
+
+  <!-- ===== RAZORPAY SDK ===== -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <!-- ===== FIREBASE + CLAIM LOGIC (MODULE) ===== -->
+  <script type="module" src="js/firebase.js"></script>
+  <script type="module" src="js/claim.js"></script>
+
+  <!-- ===== RAZORPAY HANDLER ===== -->
+  <script src="js/razorpay.js"></script>
 
 </body>
 </html>
