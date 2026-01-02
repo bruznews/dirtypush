@@ -9,24 +9,24 @@ function updateBtn() {
   if (credits <= 0) {
     btn.innerText = "BUY CREDIT";
     btn.style.background = "red";
-    btn.onclick = showBuyOptions; // Show buy options when no credit
+    btn.onclick = showBuyOptions; // Show buy options when no credits
   } else {
     btn.innerText = `SPIN (${credits})`;
     btn.style.background = "#28a745";
-    btn.onclick = spinWheel; // Normal spin function
+    btn.onclick = spinWheel; // Call spinWheel from wheel.js
   }
 }
 updateBtn();
 
 /* ===== SPIN FUNCTION PLACEHOLDER ===== */
 function spinWheel() {
-  // This will be defined in wheel.js
+  // This will be overridden in wheel.js
   console.log("Spin button clicked!");
 }
 
 /* ===== BUY CREDIT OPTIONS ===== */
 function showBuyOptions() {
-  // Create modal/pop-up for credit options
+  // Overlay container
   const overlay = document.createElement("div");
   overlay.id = "buyOverlay";
   overlay.style.position = "fixed";
@@ -38,6 +38,7 @@ function showBuyOptions() {
   overlay.style.zIndex = "999";
   overlay.style.flexDirection = "column";
 
+  // Modal box
   const box = document.createElement("div");
   box.style.background = "#fff";
   box.style.padding = "20px";
@@ -49,11 +50,11 @@ function showBuyOptions() {
   title.style.marginBottom = "15px";
   box.appendChild(title);
 
-  // Buttons for credit packs
+  // Credit pack buttons
   const packs = [
     {label:"₹5 → 5 Credits", amount:5, add:5},
     {label:"₹10 → 10 Credits", amount:10, add:10},
-    {label:"₹15 → 15 Credits", amount:15, add:20} // as per your spec
+    {label:"₹15 → 15 Credits", amount:15, add:20} // 15₹ gives 20 spins
   ];
 
   packs.forEach(pack => {
@@ -80,23 +81,18 @@ function showBuyOptions() {
 /* ===== PAYMENT FUNCTION (RAZORPAY) ===== */
 function startPayment(amount, creditAdd) {
   var options = {
-    key: "YOUR_RAZORPAY_KEY", // Replace with your Razorpay key
-    amount: amount * 100, // Amount in paise
+    key: "YOUR_RAZORPAY_KEY", // Replace with your real key
+    amount: amount * 100,     // Amount in paise
     currency: "INR",
     name: "DIRTYPUSH",
     description: `${amount} Credit Purchase`,
     handler: function (response){
-      // Payment success, add credits
-      credits += creditAdd;
+      credits += creditAdd; // Add purchased credits
       updateBtn();
       alert(`Payment Successful! ${creditAdd} Credits added.`);
     },
-    prefill: {
-      name: "",
-      email: "",
-      contact: ""
-    },
-    theme: {color: "#28a745"}
+    prefill: { name: "", email: "", contact: "" },
+    theme: { color: "#28a745" }
   };
   var rzp = new Razorpay(options);
   rzp.open();

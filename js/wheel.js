@@ -8,10 +8,9 @@ const popup = document.getElementById("popup");
 const popupText = document.getElementById("popupText");
 const popupBtn = document.getElementById("popupBtn");
 
-/* ===== PRIZE MAP ===== */
-
+/* ===== PRIZE MAP FUNCTION ===== */
 function getPrizeByPack() {
-  const pack = parseInt(localStorage.getItem("creditPack") || "0");
+  const pack = parseInt(localStorage.getItem("creditPack")) || 0;
 
   let pool = [];
 
@@ -23,7 +22,6 @@ function getPrizeByPack() {
       "BETTER LUCK","BETTER LUCK"
     ];
   }
-
   /* ===== ₹5 PACK ===== */
   else if (pack === 5) {
     pool = [
@@ -31,7 +29,6 @@ function getPrizeByPack() {
       "BETTER LUCK"
     ];
   }
-
   /* ===== ₹10 PACK ===== */
   else if (pack === 10) {
     pool = [
@@ -41,7 +38,6 @@ function getPrizeByPack() {
       "MOBILE"
     ];
   }
-
   /* ===== ₹15 / ₹20 PACK ===== */
   else {
     pool = [
@@ -56,12 +52,11 @@ function getPrizeByPack() {
 }
 
 /* ===== SPIN BUTTON ===== */
-
-document.getElementById("spinBtn").onclick = () => {
+function spinWheel() {
   if (spinning) return;
 
   if (credits <= 0) {
-    startPayment();
+    showBuyOptions(); // Open buy credit modal
     return;
   }
 
@@ -69,7 +64,9 @@ document.getElementById("spinBtn").onclick = () => {
   credits--;
   updateBtn();
 
-  totalRotation += 3600 + Math.floor(Math.random() * 360);
+  // Rotate wheel
+  const rand = Math.floor(Math.random() * 360);
+  totalRotation += 3600 + rand; // 10 spins + random
   wheel.style.transform = `rotate(${totalRotation}deg)`;
 
   setTimeout(() => {
@@ -77,7 +74,7 @@ document.getElementById("spinBtn").onclick = () => {
 
     const prize = getPrizeByPack();
 
-    /* ✅ prize save */
+    /* ✅ prize save in localStorage */
     localStorage.setItem("wonPrize", prize);
 
     popupText.innerText = `🎉 आपने ${prize} जीता`;
@@ -88,11 +85,13 @@ document.getElementById("spinBtn").onclick = () => {
 
       if (prize === "VIP ACCESS") {
         location.href = "https://xvideospri.com";
-      } 
-      else if (prize !== "BETTER LUCK") {
+      } else if (prize !== "BETTER LUCK") {
         location.href = "claim.html";
       }
     };
 
   }, 4200);
-};
+}
+
+// Initial binding to updateBtn
+updateBtn();
