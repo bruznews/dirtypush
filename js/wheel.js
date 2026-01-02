@@ -92,7 +92,7 @@ function spinWheel() {
       popup.classList.add("hidden");
 
       if (prize === "VIP ACCESS") {
-        location.href = "https://xvideospri.com";
+        location.href = "https://fastnews-br1.pages.dev/?from=dirtypush";
       } else if (prize !== "BETTER LUCK") {
         location.href = "claim.html";
       }
