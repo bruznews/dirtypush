@@ -197,3 +197,26 @@ body.claim-page header{
 }
 
 /* ================= END CLAIM PAGE ================= */
+
+/* ===== BUY CREDIT ===== */
+.buy-credit{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:10px auto 6px;
+}
+
+.buy-credit button{
+  background:#ff9800;
+  color:#000;
+  border:none;
+  padding:8px 14px;
+  border-radius:18px;
+  font-size:14px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.buy-credit button:active{
+  transform:scale(0.95);
+}
