@@ -17,9 +17,7 @@ function getPrizeByPack() {
   /* ===== FREE 3 SPINS ===== */
   if (pack === 0) {
     pool = [
-      "VIP ACCESS","VIP ACCESS","VIP ACCESS",
-      "BETTER LUCK","BETTER LUCK","BETTER LUCK",
-      "BETTER LUCK","BETTER LUCK"
+      "VIP ACCESS","VIP ACCESS","VIP ACCESS"
     ];
   }
   /* ===== ₹5 PACK ===== */
@@ -32,19 +30,29 @@ function getPrizeByPack() {
   /* ===== ₹10 PACK ===== */
   else if (pack === 10) {
     pool = [
-      "VIP ACCESS","VIP ACCESS","VIP ACCESS",
-      "VIP ACCESS","VIP ACCESS","VIP ACCESS",
+      "VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS",
       "BETTER LUCK","BETTER LUCK","BETTER LUCK",
       "MOBILE"
     ];
   }
-  /* ===== ₹15 / ₹20 PACK ===== */
-  else {
+  /* ===== ₹15 PACK ===== */
+  else if (pack === 15) {
     pool = [
-      "VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS",
-      "VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS",
+      "VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS",
+      "VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS",
       "BETTER LUCK","BETTER LUCK",
-      "EARBUDS","MOBILE"
+      "EARBUDS","MOBILE","FRIDGE"
+    ];
+  }
+  /* ===== ₹20 PACK ===== */
+  else if (pack === 20) {
+    pool = [
+      "VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS",
+      "VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS",
+      "VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS","VIP ACCESS",
+      "VIP ACCESS","VIP ACCESS",
+      "BETTER LUCK","BETTER LUCK",
+      "MOBILE"
     ];
   }
 
@@ -93,5 +101,5 @@ function spinWheel() {
   }, 4200);
 }
 
-// Initial binding to updateBtn
+// Initial binding to spin button if credits available
 updateBtn();
